@@ -18,3 +18,21 @@
         name: docker
         state: started
         enabled: true
+
+    - name: Download Kind
+      get_url:
+        url: https://kind.sigs.k8s.io/dl/v0.29.0/kind-linux-amd64
+        dest: /usr/local/bin/kind
+        mode: '0755'
+
+    - name: Download kubectl
+      get_url:
+        url: https://dl.k8s.io/release/v1.33.0/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/kubectl
+        mode: '0755'
+
+    - name: Copy Kind cluster configuration
+      copy:
+        src: kind-config.yaml
+        dest: /home/ubuntu/kind-config.yaml
+        mode: '0644'
