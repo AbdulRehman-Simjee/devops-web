@@ -1,0 +1,15 @@
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfvars
+
+# Ansible
+ansible/*.retry
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment files
+.env
